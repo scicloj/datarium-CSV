@@ -1,10 +1,6 @@
-A collection of datasets from the R ecosystem
+This repo contains datasets from the [datarium](https://cran.r-project.org/web/packages/datarium/index.html) R package ([source](https://github.com/kassambara/datarium)), converted to CSV format.
 
-## Structure
-
-- The [datarium](./datarium) subdirectory contains datasets from the [datarium](https://cran.r-project.org/web/packages/datarium/index.html) package ([source](https://github.com/kassambara/datarium)), converted to CSV format by [datarium/gen.R](datarium/gen.R).
-
-
+The conversion script is in [./gen.R](./gen.R).
 
 ## License
 
