@@ -1,23 +1,11 @@
 library(datarium)
 library(tidyverse)
 
-antismoking %>% write_csv("data/antismoking.csv")
-anxiety %>% write_csv("data/anxiety.csv")
-depression %>% write_csv("data/depression.csv")
-genderweight %>% write_csv("data/genderweight.csv")
-headache %>% write_csv("data/headache.csv")
-heartattack %>% write_csv("data/heartattack.csv")
-housetasks.raw %>% write_csv("data/housetasks.raw.csv")
-jobsatisfaction %>% write_csv("data/jobsatisfaction.csv")
-marketing %>% write_csv("data/marketing.csv")
-mice2 %>% write_csv("data/mice2.csv")
-mice %>% write_csv("data/mice.csv")
-performance %>% write_csv("data/performance.csv")
-properties %>% write_csv("data/properties.csv")
-renalstone %>% write_csv("data/renalstone.csv")
-selfesteem2 %>% write_csv("data/selfesteem2.csv")
-selfesteem %>% write_csv("data/selfesteem.csv")
-stress %>% write_csv("data/stress.csv")
-taskachievment %>% write_csv("data/taskachievment.csv")
-titanic.raw %>% write_csv("data/titanic.raw.csv")
-weightloss %>% write_csv("data/weightloss.csv")
+(ls("package:datarium") %>%
+   lapply(function(dataset_name) {
+     path = paste0("data/", dataset_name, ".csv.gz")
+     (dataset_name %>%
+        get() %>%
+        write_csv(path))
+     print(paste("wrote", path))
+   }))
